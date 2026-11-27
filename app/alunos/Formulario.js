@@ -11,7 +11,7 @@ export default function Formulario({ escolas }) {
     setValores(anteriores => ({ ...anteriores, [name]: value }));
   }
   return (
-    <form action={acao}>
+    <form action={acao} className="cadastro-simples">
       {campos.map(campo => (
         <label key={campo.chave}>
           {campo.rotulo}

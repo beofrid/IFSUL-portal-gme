@@ -1,3 +1,8 @@
-export default function Pagina() {
-    return <h1>Escolas</h1>;
+export default async function Pagina({ searchParams }) {
+  return (
+    <>
+      {(await searchParams).resultado === 'salvo' && <p role="status">Cadastro salvo.</p>}
+      <form action="/escolas/novo"><button>Cadastrar escola</button></form>
+    </>
+  );
 }

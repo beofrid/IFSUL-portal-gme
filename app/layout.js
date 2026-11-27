@@ -1,23 +1,15 @@
-import Link from "next/link";
+import Moldura from "../components/Moldura";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
-
 export const metadata = {
     title: "Portal GME | Gestão de Matrículas Escolares",
+    description: "Portal acadêmico de gestão de matrículas escolares",
 };
-
 export default function Layout({ children }) {
     return (
         <html lang="pt-BR">
             <body>
-                <header>
-                    <Link href="/">Portal GME</Link>
-                    <nav aria-label="Navegação principal">
-                        <Link href="/alunos">Alunos</Link>
-                        <Link href="/escolas">Escolas</Link>
-                        <Link href="/secretarios">Secretários</Link>
-                    </nav>
-                </header>
-                <main>{children}</main>
+                <Moldura>{children}</Moldura>
                 <footer>Portal GME · Gestão de Matrículas Escolares</footer>
             </body>
         </html>
