@@ -14,10 +14,7 @@ export async function cadastrar(anterior, form) {
     const cpf = dados.cpf.replace(/\D/g, "");
     if (!/^(?:\d{11}|\d{3}\.\d{3}\.\d{3}-\d{2})$/.test(dados.cpf))
         return "Informe o CPF com 11 dígitos.";
-    dados.cpf = cpf.replace(
-        /^(\d{3})(\d{3})(\d{3})(\d{2})$/,
-        "$1.$2.$3-$4",
-    );
+    dados.cpf = cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, "$1.$2.$3-$4");
     const dia = new Date(dados.dataNascimento + "T00:00:00Z");
     if (
         !Number.isFinite(dia.getTime()) ||
@@ -32,7 +29,8 @@ export async function cadastrar(anterior, form) {
         await Aluno.init();
         await Aluno.create(dados);
     } catch (erro) {
-        if (erro.code === 11000) return "Este número de matrícula já está cadastrado.";
+        if (erro.code === 11000)
+            return "Este número de matrícula já está cadastrado.";
         return "Falha ao salvar. Confira a conexão com o banco e tente novamente.";
     }
     redirect("/alunos?resultado=salvo");
