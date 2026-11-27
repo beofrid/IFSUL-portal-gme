@@ -1,0 +1,7 @@
+body { min-height: 100vh; margin: 0; display: flex; flex-direction: column; }
+header, main, footer { padding: 1rem; }
+header, nav { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+main { flex: 1; }
+form { display: grid; gap: .75rem; max-width: 28rem; }
+label { display: grid; gap: .25rem; }
+button { justify-self: start; }
