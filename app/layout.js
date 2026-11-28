@@ -1,4 +1,3 @@
-import Moldura from "../components/Moldura";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 export const metadata = {
@@ -9,7 +8,7 @@ export default function Layout({ children }) {
     return (
         <html lang="pt-BR">
             <body>
-                <Moldura>{children}</Moldura>
+                {children}
                 <footer>Portal GME · Gestão de Matrículas Escolares</footer>
             </body>
         </html>

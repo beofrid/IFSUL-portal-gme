@@ -1,12 +1,5 @@
-export default async function Pagina({ searchParams }) {
-    return (
-        <>
-            {(await searchParams).resultado === "salvo" && (
-                <p role="status">Cadastro salvo.</p>
-            )}
-            <form action="/escolas/novo">
-                <button>Cadastrar escola</button>
-            </form>
-        </>
-    );
+import Listagem from "../../components/Listagem";
+
+export default function Pagina({ searchParams }) {
+    return <Listagem entidade="escolas" searchParams={searchParams} />;
 }

@@ -25,7 +25,8 @@ header {
 }
 .marca,
 .conta,
-.titulo {
+.titulo,
+.filtros {
     display: flex;
     align-items: center;
 }
@@ -121,6 +122,30 @@ h1 {
 a {
     color: var(--azul);
 }
+.filtros {
+    align-items: flex-end;
+    gap: 12px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.filtros label {
+    flex: 1 1 160px;
+}
+label,
+dt,
+th {
+    font-weight: 600;
+}
+.filtros input {
+    margin-top: 5px;
+}
+.table > :not(caption) > * > * {
+    padding: 14px 20px;
+}
+.table thead th {
+    background: #f1f4fa;
+    color: #394961;
+}
 footer {
     border-top: 1px solid var(--borda);
     color: #596779;
@@ -145,10 +170,8 @@ footer {
 }
 
 .bordalogo {
-   filter: drop-shadow(1px 2px 2px white);
-
+    filter: drop-shadow(1px 2px 2px white);
 }
-
 
 @media (max-width: 767px) {
     .menu {
@@ -161,9 +184,7 @@ footer {
     .conta span {
         display: none;
     }
-
+    .filtros label {
+        flex-basis: 100%;
+    }
 }
-
-.cadastro-simples { display: grid; gap: .75rem; max-width: 28rem; }
-.cadastro-simples label { display: grid; gap: .25rem; }
-.cadastro-simples button { justify-self: start; }

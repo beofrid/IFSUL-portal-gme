@@ -1,10 +1,11 @@
-import FormCadastro from "../../../components/FormCadastro";
+import Registro from "../../../components/Registro";
 
-export default function NovaEscola() {
+export default function Novo() {
     return (
-        <>
-            <h1>Cadastrar escola</h1>
-            <FormCadastro entidade="escolas" />
-        </>
+        <Registro
+            entidade="escolas"
+            id="novo"
+            searchParams={{}}
+        />
     );
 }

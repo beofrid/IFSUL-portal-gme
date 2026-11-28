@@ -1,8 +1,6 @@
-"use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { secoes } from "../lib/secoes";
-
+import { cadastros } from "../lib/secoes";
+import { sair } from "../app/acoesCadastro";
 import Image from "next/image";
 import logo from "../public/logo2.png";
 
@@ -19,10 +17,7 @@ export function Marca() {
         </span>
     );
 }
-export default function Moldura({ children }) {
-    const caminho = usePathname();
-    const atual = caminho.split("/")[1];
-    if (atual === "login") return children;
+export default function Painel({ usuario, atual, children }) {
     return (
         <>
             <header>
@@ -43,7 +38,7 @@ export default function Moldura({ children }) {
                         >
                             Início
                         </Link>
-                        {Object.entries(secoes).map(([slug, config]) => (
+                        {Object.entries(cadastros).map(([slug, config]) => (
                             <Link
                                 href={"/" + slug}
                                 key={slug}
@@ -56,14 +51,15 @@ export default function Moldura({ children }) {
                             </Link>
                         ))}
                     </div>
-                    <div className="conta">
-                        <Link
-                            href="/login"
-                            className="btn btn-sm btn-outline-light"
-                        >
+                    <form
+                        action={sair}
+                        className="conta"
+                    >
+                        <span>{usuario.nome}</span>
+                        <button className="btn btn-sm btn-outline-light">
                             Sair
-                        </Link>
-                    </div>
+                        </button>
+                    </form>
                 </nav>
             </header>
             <main className="container py-4 py-md-5">{children}</main>

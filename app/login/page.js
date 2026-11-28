@@ -1,20 +1,27 @@
-import { Marca } from '../../components/Moldura';
+import { Login } from "../../components/FormCadastro";
+import { Marca } from "../../components/Moldura";
+export default function PaginaLogin() {
+    return (
+        <main className="acesso">
+            <section className="cartao login">
+                <Marca />
+                <h1>Acesso ao portal</h1>
+                <p className="text-secondary mb-4">
+                    Entre com seu e-mail e senha.
+                </p>
+                <Login />
 
-export default function Login() {
-  return (
-    <main className="acesso">
-      <section className="cartao login">
-        <Marca />
-        <h1>Acesso ao portal</h1>
-        <p className="text-secondary mb-4">Entre com seu e-mail e senha.</p>
-        <form action="/" method="get" noValidate>
-          <label className="form-label" htmlFor="email">E-mail</label>
-          <input id="email" type="email" autoComplete="username" className="form-control mb-3" />
-          <label className="form-label" htmlFor="senha">Senha</label>
-          <input id="senha" type="password" autoComplete="current-password" className="form-control mb-4" />
-          <button className="btn btn-primary w-100">Entrar</button>
-        </form>
-      </section>
-    </main>
-  );
+                <div className="m-3">
+                    <p className="fw-bold mb-0">Aluno: Bruno Medeiros Dias</p>
+                    <p className="fw-bold ">Polo: São Francisco de Paula</p>
+                    <p className=" fw-bold small mb-0">Logins:</p>
+                    <p className="small mb-0">adm@email.com</p>
+                    <p className="small mb-0">secretario1@email.com (visualiza todos e só cadastra aluno)</p>
+                    <p className="small mb-0">Senha: 12345678</p>
+
+                </div>
+            </section>
+            
+        </main>
+    );
 }
